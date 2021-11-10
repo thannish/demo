@@ -1,0 +1,28 @@
+image: google/cloud-sdk
+
+stages:
+  - build
+  - deploy
+
+Build:
+  stage: build
+  variables:
+    PROJECT: Apigee
+    ENVIRONMENT: test
+    CLUSTER: test-cluster
+  script:
+    - echo "Deploy Here"
+    - sh build.sh
+  trigger: release/*
+
+Deploy:
+  stage: deplo
+  variables:
+    PROJECT: Apigee
+    ENVIRONMENT: test
+    CLUSTER: test-cluster
+  script:
+    - echo "Deploy Here"
+    - sh apigee-deployment.sh
+  trigger: release/*
+
