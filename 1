@@ -13,7 +13,7 @@ Build:
   script:
     - echo "Deploy Here"
     - sh build.sh
-  trigger: release/*
+  trigger: release/2021.10.28/*
 
 Deploy:
   stage: deplo
@@ -24,5 +24,5 @@ Deploy:
   script:
     - echo "Deploy Here"
     - sh apigee-deployment.sh
-  trigger: release/*
+  trigger: release/2021.10.28/*
 
